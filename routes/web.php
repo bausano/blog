@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/id/{article}', function (Request $request, $article) {
+    return view('welcome', compact(
+        'article'
+    ));
 });

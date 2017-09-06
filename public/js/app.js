@@ -17986,6 +17986,7 @@ window.Vue = __webpack_require__(36);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('blog', __webpack_require__(57));
 Vue.component('column', __webpack_require__(37));
 Vue.component('post', __webpack_require__(40));
 
@@ -41898,7 +41899,7 @@ var Component = __webpack_require__(2)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/michael/Code/satan-codes/resources/assets/js/components/Column.vue"
+Component.options.__file = "/home/michael/Code/blog/resources/assets/js/components/Column.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Column.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41909,9 +41910,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-8d330f2c", Component.options)
+    hotAPI.createRecord("data-v-48638068", Component.options)
   } else {
-    hotAPI.reload("data-v-8d330f2c", Component.options)
+    hotAPI.reload("data-v-48638068", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -41943,26 +41944,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var _ = __webpack_require__(3);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['heading'],
-  data: function data() {
-    return {
-      links: [{
-        title: 'Dante\'s hell #3: Eval',
-        description: 'Accusamus tempore magnam totam earum quis quisquam. Rerum laboriosam cum voluptatum voluptatibus, fugit asperiores!',
-        id: '431'
-      }, {
-        title: 'Dante\'s hell #3: Eval',
-        description: 'Rerum laboriosam cum voluptatum voluptatibus, fugit asperiores!',
-        id: '433'
-      }]
-    };
-  },
-
-
+  props: ['heading', 'links'],
   methods: {
     truncate: function truncate(string) {
       return _.truncate(string, {
         length: 70
+      });
+    },
+    swap: function swap(id) {
+      var _this = this;
+
+      $('#app').fadeOut(300, function () {
+        _this.$emit('swap', id);
+        history.replaceState({}, '', '/id/' + id);
+        $('#app').fadeIn(300);
       });
     }
   }
@@ -41973,23 +41968,30 @@ var _ = __webpack_require__(3);
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
+  return _c('div', {
+    staticClass: "column"
+  }, [(_vm.links.length > 0) ? _c('div', {
     staticClass: "links"
   }, [_c('h2', [_vm._v(_vm._s(_vm.heading))]), _vm._v(" "), _vm._l((_vm.links), function(link) {
     return _c('div', {
-      staticClass: "link"
+      staticClass: "link",
+      on: {
+        "click": function($event) {
+          _vm.swap(link.id)
+        }
+      }
     }, [_c('div', {
       staticClass: "title"
     }, [_vm._v(_vm._s(link.title))]), _vm._v(" "), _c('div', {
       staticClass: "description"
     }, [_vm._v(_vm._s(_vm.truncate(link.description)))])])
-  })], 2)])
+  })], 2) : _vm._e()])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-8d330f2c", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-48638068", module.exports)
   }
 }
 
@@ -42010,7 +42012,7 @@ var Component = __webpack_require__(2)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/michael/Code/satan-codes/resources/assets/js/components/Post.vue"
+Component.options.__file = "/home/michael/Code/blog/resources/assets/js/components/Post.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Post.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42021,9 +42023,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5bfc9098", Component.options)
+    hotAPI.createRecord("data-v-6117ef96", Component.options)
   } else {
-    hotAPI.reload("data-v-5bfc9098", Component.options)
+    hotAPI.reload("data-v-6117ef96", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -42066,69 +42068,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: { Heel: __WEBPACK_IMPORTED_MODULE_0__components_Heel_vue___default.a },
-  data: function data() {
-    return {
-      article: {
-        title: 'Dante\'s hell, second level',
-        subtitle: 'Welcome to the series of doom. My minions are ready!',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero deleniti tempora labore, ipsum impedit sunt eum voluptatibus blanditiis voluptas saepe beatae modi expedita laudantium laboriosam dolores tenetur nesciunt itaque. Est.',
-        time: 'Wed Sep 06 2017 00:49:44',
-        author: 'Michael Bausano'
-      }
-    };
-  }
+  props: ['article'],
+  components: { Heel: __WEBPACK_IMPORTED_MODULE_0__components_Heel_vue___default.a }
 });
 
 /***/ }),
@@ -42148,7 +42093,7 @@ var Component = __webpack_require__(2)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/michael/Code/satan-codes/resources/assets/js/components/Heel.vue"
+Component.options.__file = "/home/michael/Code/blog/resources/assets/js/components/Heel.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Heel.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42159,9 +42104,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-69a56b78", Component.options)
+    hotAPI.createRecord("data-v-0e88b94c", Component.options)
   } else {
-    hotAPI.reload("data-v-69a56b78", Component.options)
+    hotAPI.reload("data-v-0e88b94c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -42324,7 +42269,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-69a56b78", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-0e88b94c", module.exports)
   }
 }
 
@@ -42337,7 +42282,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "post"
   }, [_c('div', {
     staticClass: "content"
-  }, [_c('h1', [_vm._v(_vm._s(_vm.article.title))]), _vm._v(" "), _c('h3', [_vm._v(_vm._s(_vm.article.subtitle))]), _vm._v(" "), _c('div', {
+  }, [_c('div', {
+    staticClass: "header"
+  }, [_c('h1', [_vm._v(_vm._s(_vm.article.title))]), _vm._v(" "), _c('h3', [_vm._v(_vm._s(_vm.article.subtitle))])]), _vm._v(" "), _c('div', {
     staticClass: "info row"
   }, [_c('div', {
     staticClass: "time col-xs-6 col-md-6"
@@ -42347,29 +42294,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "author col-xs-6 col-md-6"
   }, [_c('i', {
     staticClass: "fa fa-user"
-  }), _vm._v("\n        " + _vm._s(_vm.article.author) + "\n      ")]), _vm._v(" "), _c('div', {
-    staticClass: "description col-md-12"
-  }, [_vm._v("> " + _vm._s(_vm.article.description))])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('heel')], 1)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "body"
-  }, [_c('h1', [_vm._v("Incidunt aut natus")]), _vm._v(" "), _c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio rerum cupiditate sunt voluptatem laborum tenetur, harum assumenda. Tempore distinctio vitae natus aspernatur in, iste! Ipsum quia illum ipsam ratione rerum.")]), _vm._v(" "), _c('h3', [_vm._v("Subtitle")]), _vm._v(" "), _c('p', [_vm._v("Eum consectetur nulla "), _c('strong', [_vm._v("accusamus")]), _vm._v(" ad vel. Dolorum natus aperiam exercitationem, animi nemo ab impedit nobis sequi repellendus, qui ipsam asperiores molestias quae eum accusamus minus recusandae explicabo porro quia officia!")]), _vm._v(" "), _c('p', [_vm._v("Incidunt aut natus ad asperiores, cum atque voluptas saepe autem hic nesciunt similique in minima et iure voluptates facere laudantium unde repellat id beatae eius, repellendus, nemo veritatis laborum! Quia.")]), _vm._v(" "), _c('div', {
-    staticClass: "comment"
-  }, [_vm._v("This is a comment for following code:")]), _vm._v(" "), _c('pre', {
-    staticClass: "line-numbers"
-  }, [_vm._v("        "), _c('code', {
-    staticClass: "language-js"
-  }, [_vm._v("\n          /**\n           * First we will load all of this project's JavaScript dependencies which\n           * includes Vue and other libraries. It is a great starting point when\n           * building robust, powerful web applications using Vue and Laravel.\n           */\n\n          require('./bootstrap')\n\n          window.Vue = require('vue')\n\n          /**\n           * Next, we will create a fresh Vue application instance and attach it to\n           * the page. Then, you may begin adding components to this application\n           * or customize the JavaScript scaffolding to fit your unique needs.\n           */\n\n          Vue.component('column', require('./components/Column.vue'))\n          Vue.component('post', require('./components/Post.vue'))\n\n          const app = new Vue({\n              el: '#app'\n          })\n\n        ")]), _vm._v("\n      ")]), _vm._v(" "), _c('h1', [_vm._v("Incidunt aut natus")]), _vm._v(" "), _c('p', [_vm._v("Laborum veniam repudiandae, magni et numquam voluptates architecto error perspiciatis ullam est, ipsa odio illo ratione minus quo sequi nobis delectus animi recusandae alias repellat quas suscipit. Eligendi provident, dolor?")]), _vm._v(" "), _c('p', [_vm._v("Adipisci similique voluptate inventore officiis dolorum, corporis aliquam minus. Corrupti nulla repudiandae dolores dignissimos accusamus fugit culpa odio excepturi. Aliquam velit fugiat necessitatibus reiciendis reprehenderit placeat, magnam numquam consequatur iure.")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("First")]), _vm._v(" "), _c('li', [_vm._v("Second")]), _vm._v(" "), _c('li', [_vm._v("Third")])]), _vm._v(" "), _c('p', [_c('a', {
+  }), _vm._v(" "), _c('a', {
     attrs: {
-      "href": "#"
+      "href": "http://bausano.me",
+      "target": "_blank"
     }
-  }, [_vm._v("This is a link.")])])])
-}]}
+  }, [_vm._v(_vm._s(_vm.article.author))])]), _vm._v(" "), _c('div', {
+    staticClass: "description col-md-12"
+  }, [_vm._v("> " + _vm._s(_vm.article.description))])]), _vm._v(" "), _c('div', {
+    staticClass: "body"
+  }, [_vm._v(_vm._s(_vm.article.body))]), _vm._v(" "), _c('heel')], 1)])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5bfc9098", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-6117ef96", module.exports)
   }
 }
 
@@ -42378,6 +42318,227 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */
+/***/ (function(module, exports) {
+
+module.exports = [{
+  title: 'řtvrty',
+  subtitle: 'Welcome to the series of doom. My minions are ready!',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero deleniti tempora labore, ipsum impedit sunt eum voluptatibus blanditiis voluptas saepe beatae modi expedita laudantium laboriosam dolores tenetur nesciunt itaque. Est.',
+  time: 'Wed Sep 06 2017 00:49:44',
+  author: 'Michael Bausano',
+  body: 'wtf',
+  id: 4
+}, {
+  title: 'druhy',
+  subtitle: 'Welcome to the series of doom. My minions are ready!',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero deleniti tempora labore, ipsum impedit sunt eum voluptatibus blanditiis voluptas saepe beatae modi expedita laudantium laboriosam dolores tenetur nesciunt itaque. Est.',
+  time: 'Wed Sep 06 2017 00:49:44',
+  author: 'Michael Bausano',
+  body: 'wtf',
+  id: 2
+}, {
+  title: 'první',
+  subtitle: 'Welcome to the series of doom. My minions are ready!',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero deleniti tempora labore, ipsum impedit sunt eum voluptatibus blanditiis voluptas saepe beatae modi expedita laudantium laboriosam dolores tenetur nesciunt itaque. Est.',
+  time: 'Wed Sep 06 2017 00:49:44',
+  author: 'Michael Bausano',
+  body: 'wtf',
+  id: 1
+}, {
+  title: 'třetí',
+  subtitle: 'Welcome to the series of doom. My minions are ready!',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero deleniti tempora labore, ipsum impedit sunt eum voluptatibus blanditiis voluptas saepe beatae modi expedita laudantium laboriosam dolores tenetur nesciunt itaque. Est.',
+  time: 'Wed Sep 06 2017 00:49:44',
+  author: 'Michael Bausano',
+  body: 'wtf',
+  id: 3
+}, {
+  title: 'pět',
+  subtitle: 'Welcome to the series of doom. My minions are ready!',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero deleniti tempora labore, ipsum impedit sunt eum voluptatibus blanditiis voluptas saepe beatae modi expedita laudantium laboriosam dolores tenetur nesciunt itaque. Est.',
+  time: 'Wed Sep 06 2017 00:49:44',
+  author: 'Michael Bausano',
+  body: 'wtf',
+  id: 5
+}, {
+  title: 'šest',
+  subtitle: 'Welcome to the series of doom. My minions are ready!',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero deleniti tempora labore, ipsum impedit sunt eum voluptatibus blanditiis voluptas saepe beatae modi expedita laudantium laboriosam dolores tenetur nesciunt itaque. Est.',
+  time: 'Wed Sep 06 2017 00:49:44',
+  author: 'Michael Bausano',
+  body: 'wtf',
+  id: 6
+}, {
+  title: 'sedm',
+  subtitle: 'Welcome to the series of doom. My minions are ready!',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero deleniti tempora labore, ipsum impedit sunt eum voluptatibus blanditiis voluptas saepe beatae modi expedita laudantium laboriosam dolores tenetur nesciunt itaque. Est.',
+  time: 'Wed Sep 06 2017 00:49:44',
+  author: 'Michael Bausano',
+  body: 'wtf',
+  id: 7
+}];
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(58),
+  /* template */
+  __webpack_require__(59),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/home/michael/Code/blog/resources/assets/js/components/Blog.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Blog.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0c8a3598", Component.options)
+  } else {
+    hotAPI.reload("data-v-0c8a3598", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Column_vue__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Column_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Column_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Post_vue__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Post_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Post_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  component: [__WEBPACK_IMPORTED_MODULE_0__components_Column_vue___default.a, __WEBPACK_IMPORTED_MODULE_1__components_Post_vue___default.a],
+  props: ['load'],
+  data: function data() {
+    return {
+      articles: __webpack_require__(56),
+      left: [],
+      right: [],
+      current: {}
+    };
+  },
+  mounted: function mounted() {
+    this.articles.sort(function (a, b) {
+      return parseInt(a.id) - parseInt(b.id);
+    });
+
+    this.init(this.load);
+  },
+
+  methods: {
+    init: function init(id) {
+      var key = this.articles.findIndex(function (article) {
+        return parseInt(article.id) === parseInt(id);
+      });
+      if (key === -1) {
+        key = 0;
+      }
+
+      this.left = this.leftCol(this.articles, key);
+      this.right = this.rightCol(this.articles, key);
+      this.current = this.articles[key];
+    },
+
+
+    rightCol: function rightCol(arr, key) {
+      return arr.slice(key + 1, arr.length).slice(0, 2);
+    },
+
+    leftCol: function leftCol(arr, key) {
+      var articles = arr.slice(0, key);
+
+      return articles.slice(articles.length - 2, articles.length).reverse();
+    }
+  }
+});
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('column', {
+    staticClass: "hidden-sm col-md-3 text-right",
+    attrs: {
+      "links": _vm.left,
+      "heading": "Previous"
+    },
+    on: {
+      "swap": _vm.init
+    }
+  }), _vm._v(" "), _c('post', {
+    staticClass: "col-sm-12 col-md-6",
+    attrs: {
+      "article": _vm.current
+    }
+  }), _vm._v(" "), _c('column', {
+    staticClass: "hidden-sm col-md-3",
+    attrs: {
+      "links": _vm.right,
+      "heading": "Next"
+    },
+    on: {
+      "swap": _vm.init
+    }
+  })], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-0c8a3598", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

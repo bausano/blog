@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <div class="links">
+  <div class="column">
+    <div class="links" v-if="links.length > 0">
       <h2>{{ heading }}</h2>
-      <div class="link" v-for="link in links">
+      <div class="link" v-for="link in links" v-on:click="swap(link.id)">
         <div class="title">{{ link.title }}</div>
         <div class="description">{{ truncate(link.description) }}</div>
       </div>
@@ -14,29 +14,20 @@
   const _ = require('lodash')
 
   export default {
-    props: ['heading'],
-    data() {
-      return {
-        links: [
-          {
-            title: 'Dante\'s hell #3: Eval',
-            description: 'Accusamus tempore magnam totam earum quis quisquam. Rerum laboriosam cum voluptatum voluptatibus, fugit asperiores!',
-            id: '431'
-          },
-          {
-            title: 'Dante\'s hell #3: Eval',
-            description: 'Rerum laboriosam cum voluptatum voluptatibus, fugit asperiores!',
-            id: '433'
-          }
-        ]
-      }
-    },
-
+    props: ['heading', 'links'],
     methods: {
       truncate: (string) => {
         return _.truncate(string, {
           length: 70
         })
+      },
+      swap(id) {
+        $('#app').fadeOut(300, () => {
+          this.$emit('swap', id)
+          history.replaceState({} , '', '/id/' + id)
+          $('#app').fadeIn(300)
+        })
+
       }
     }
   }

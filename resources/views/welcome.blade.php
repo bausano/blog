@@ -11,7 +11,6 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}">
 
         <!-- Styles -->
@@ -23,9 +22,7 @@
     </head>
     <body>
         <div id="app">
-            <column class="col-sm-12 col-md-3 column text-right" heading="Previous"></column>
-            <post class="col-sm-12 col-md-6"></post>
-            <column class="col-sm-12 col-md-3 column" heading="Next"></column>
+            <blog load="{{ $article }}"></blog>
         </div>
 
         <!-- Scripts -->
