@@ -1,0 +1,40 @@
+.column {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links {
+  color: #000;
+  display: block;
+
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 600;
+    padding: 15px;
+  }
+
+  .link {
+    color: $inactive;
+    padding: 15px 15px;
+    cursor: pointer;
+
+    &:hover {
+      color: #000;
+    }
+
+    .title {
+      padding: 10px 0;
+      font-size: 130%;
+      font-weight: 600;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+    }
+
+    .description {
+      font-size: 110%;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+// Footer
+@import "heel";
+
+.post {
+  margin-top: 5vh;
+  min-height: 95vh;
+}
+
+.content {
+  padding: 0 5px;
+  font-size: 100%;
+
+  h1 {
+    font-size: 200%;
+    padding: 35px 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    letter-spacing: .1rem;
+    font-size: 120%;
+    font-style: italic;
+  }
+
+  .info {
+    margin: 25px 0;
+    padding: 4px;
+    background-color: lighten($brand-info, 20);
+    border-radius: 3px;
+
+    .time {
+      font-weight: 400;
+      text-align: center;
+      line-height: 35px;
+    }
+
+    .author {
+      font-weight: 400;
+      text-align: center;
+      line-height: 35px;
+    }
+
+    .description {
+      text-align: justify;
+      text-indent: 15px;
+    }
+  }
+
+  .body {
+    margin: 30px 0;
+
+    p {
+      font-family: 'Roboto Slab', serif;
+    }
+
+    .comment {
+      font-style: italic;
+      color: $inactive;
+      margin-top: 35px;
+    }
+
+    h1 {
+      font-size: 120%;
+    }
+
+    h3 {
+      font-size: 115%;
+    }
+  }
+}
