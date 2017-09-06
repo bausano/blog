@@ -37,15 +37,16 @@
         </a>
       </div>
       <p>
-        This blog is a sarcastic project of
+        This blog is both a serious and a sarcastic project of
         <a href="http://bausano.me" target="_blank">mine</a> and if you don't
-        find it fun then probably because it's not. But hey, you can always
-        tell me how much my humour sucks at
+        find it witty then probably because it's not. But hey, you can always
+        tell me how much it sucks at
         <strong>bausanomichal&commat;gmail.com</strong>.
       </p>
       <p>
-        If you'd like to submit some code you can get in touch with me
-        via any <strong>social media</strong> or <strong>email</strong>.
+        If you'd like to submit some code for desecration you can get
+        in touch with mevia any <strong>social media</strong>
+        or <strong>email</strong>.
       </p>
       <p><a>#desecratemycode</a></p>
     </div>
