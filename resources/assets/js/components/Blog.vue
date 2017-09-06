@@ -16,10 +16,9 @@
 
   export default {
     component: [Column, Post],
-    props: ['load'],
+    props: ['load', 'raw'],
     data() {
       return {
-        articles: require('../test.js'),
         left: [],
         right: [],
         current: {}
@@ -52,6 +51,11 @@
         let articles = arr.slice(0, key)
 
         return articles.slice(articles.length - 2, articles.length).reverse()
+      }
+    },
+    computed: {
+      articles() {
+        return JSON.parse(this.raw)
       }
     }
   }

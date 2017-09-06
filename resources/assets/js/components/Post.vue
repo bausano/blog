@@ -8,11 +8,10 @@
       <div class="info row">
         <div class="time col-xs-6 col-md-6">
           <i class="fa fa-calendar"></i>
-          {{ article.time }}
+          {{ article.created_at }}
         </div>
         <div class="author col-xs-6 col-md-6">
-          <i class="fa fa-user"></i>
-          <a href="http://bausano.me" target="_blank">{{ article.author }}</a>
+          <a href="http://bausano.me" target="_blank">{{ article.user ? article.user.name : '' }}</a>
         </div>
         <div class="description col-md-12">> {{ article.description }}</div>
       </div>

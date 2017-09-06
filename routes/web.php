@@ -11,8 +11,13 @@
 |
 */
 
-Route::get('/id/{article}', function (Request $request, $article) {
-    return view('welcome', compact(
-        'article'
-    ));
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'AdminController@index')->name('admin');
 });
+
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/id/{article}', 'HomeController@article')->name('article');
+
+Auth::routes();
