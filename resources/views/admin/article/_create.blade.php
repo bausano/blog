@@ -7,24 +7,9 @@
     <form action="{{ url('/admin/article') }}" method="post">
         {!! csrf_field() !!}
         {!! method_field('POST') !!}
-        <div class="panel-body">
-            <input type="text" name="title"
-                placeholder="Title" class="form-control">
-        </div>
-        <div class="panel-body">
-            <input type="text" name="subtitle"
-                placeholder="Subtitle" class="form-control">
-        </div>
-        <div class="panel-body">
-            <textarea name="description"
-                placeholder="Description" class="form-control"></textarea>
-        </div>
-        <div class="panel-body">
-            <textarea name="body"
-                placeholder="HTML body"
-                class="form-control"
-                rows="15">@include('admin.article._skeleton')</textarea>
-        </div>
+
+        <article-form></article-form>
+
         <div class="panel-body">
             <button type="submit" class="btn btn-primary">Add a new article</button>
         </div>

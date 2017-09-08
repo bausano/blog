@@ -18,6 +18,7 @@ window.Vue = require('vue')
 Vue.component('blog', require('./components/Blog.vue'))
 Vue.component('column', require('./components/Column.vue'))
 Vue.component('post', require('./components/Post.vue'))
+Vue.component('article-form', require('./admin/components/ArticleForm.vue'))
 
 const app = new Vue({
   el: '#app'

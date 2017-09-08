@@ -18069,6 +18069,7 @@ window.Vue = __webpack_require__(38);
 Vue.component('blog', __webpack_require__(39));
 Vue.component('column', __webpack_require__(10));
 Vue.component('post', __webpack_require__(11));
+Vue.component('article-form', __webpack_require__(59));
 
 var app = new Vue({
   el: '#app'
@@ -42112,8 +42113,10 @@ var _ = __webpack_require__(3);
 
       $('#app').fadeOut(300, function () {
         _this.$emit('swap', id);
-        history.replaceState({}, '', '/id/' + id);
-        $('#app').fadeIn(300);
+        history.replaceState({}, '', '/article/' + id);
+        $('#app').fadeIn(300, function () {
+          Prism.highlightAll();
+        });
       });
     }
   }
@@ -42189,10 +42192,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['article'],
   components: { Heel: __WEBPACK_IMPORTED_MODULE_0__components_Heel_vue___default.a },
-  methods: {
-    print: function print(html) {
-      console.log(html);
-      return html;
+  watch: {
+    article: function article() {
+      Prism.highlightAll();
     }
   }
 });
@@ -42478,6 +42480,277 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(60),
+  /* template */
+  __webpack_require__(61),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/home/michael/Code/blog/resources/assets/js/admin/components/ArticleForm.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] ArticleForm.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4c6aacd4", Component.options)
+  } else {
+    hotAPI.reload("data-v-4c6aacd4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['raw'],
+  data: function data() {
+    return {
+      preview: false,
+      article: {
+        title: '',
+        subtitle: '',
+        description: '',
+        body: ''
+      }
+    };
+  },
+  mounted: function mounted() {
+    if (this.raw != undefined) {
+      this.article = JSON.parse(this.raw);
+    }
+  },
+
+  methods: {
+    togglePreview: function togglePreview() {
+      this.preview = !this.preview;
+      setTimeout(function () {
+        Prism.highlightAll();
+      }, 100);
+    }
+  },
+  computed: {}
+});
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "panel-body"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.article.title),
+      expression: "article.title"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "name": "title",
+      "placeholder": "Title"
+    },
+    domProps: {
+      "value": (_vm.article.title)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.article.title = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "panel-body"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.article.subtitle),
+      expression: "article.subtitle"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "name": "subtitle",
+      "placeholder": "Subtitle"
+    },
+    domProps: {
+      "value": (_vm.article.subtitle)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.article.subtitle = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "panel-body"
+  }, [_c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.article.description),
+      expression: "article.description"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "name": "description",
+      "placeholder": "Description"
+    },
+    domProps: {
+      "value": (_vm.article.description)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.article.description = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "panel-body"
+  }, [(!_vm.preview) ? _c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        _vm.togglePreview()
+      }
+    }
+  }, [_vm._v("Preview")]) : _vm._e(), _vm._v(" "), (_vm.preview) ? _c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        _vm.togglePreview()
+      }
+    }
+  }, [_vm._v("HTML")]) : _vm._e(), _vm._v(" "), (!_vm.preview) ? _c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.article.body),
+      expression: "article.body"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "name": "body",
+      "placeholder": "HTML body",
+      "rows": "15"
+    },
+    domProps: {
+      "value": (_vm.article.body)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.article.body = $event.target.value
+      }
+    }
+  }) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "content"
+  }, [(_vm.preview) ? _c('div', {
+    staticClass: "body",
+    domProps: {
+      "innerHTML": _vm._s(_vm.article.body)
+    }
+  }) : _vm._e()]), _vm._v(" "), _vm._m(0)])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('pre', [_vm._v("        "), _c('code', {
+    staticClass: "language-html"
+  }, [_vm._v("\n          <i class=\"fa fa-icon\"></i>\n          <div class=\"comment\">Comment</div>\n          <pre class=\"line-numbers\">\n            <code class=\"language-js\">\n              // Your code\n            </code>\n          </pre>")]), _vm._v("\n      ")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-4c6aacd4", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

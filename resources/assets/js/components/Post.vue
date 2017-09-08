@@ -28,10 +28,9 @@
   export default {
     props: ['article'],
     components: {Heel},
-    methods: {
-      print(html) {
-        console.log(html)
-        return html
+    watch: {
+      article: () => {
+        Prism.highlightAll()
       }
     }
   }

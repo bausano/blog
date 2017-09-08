@@ -8526,7 +8526,8 @@ button.close {
 }
 
 .content .body h1 {
-  font-size: 120%;
+  font-size: 125%;
+  font-weight: 600;
 }
 
 .content .body h3 {

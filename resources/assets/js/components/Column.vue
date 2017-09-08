@@ -24,10 +24,11 @@
       swap(id) {
         $('#app').fadeOut(300, () => {
           this.$emit('swap', id)
-          history.replaceState({} , '', '/id/' + id)
-          $('#app').fadeIn(300)
+          history.replaceState({} , '', '/article/' + id)
+          $('#app').fadeIn(300, () => {
+            Prism.highlightAll()
+          })
         })
-
       }
     }
   }
