@@ -8412,6 +8412,7 @@ button.close {
 }
 
 .heel .link .select-me {
+  text-align: center;
   border: none;
   outline: none;
   cursor: pointer;
@@ -8459,6 +8460,7 @@ button.close {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  width: 100%;
 }
 
 .content .header h1 {
@@ -8483,6 +8485,7 @@ button.close {
   border-radius: 3px;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  width: 100%;
 }
 
 .content .info .time {
@@ -8509,6 +8512,7 @@ button.close {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  width: 100%;
 }
 
 .content .body p {
@@ -8527,6 +8531,43 @@ button.close {
 
 .content .body h3 {
   font-size: 115%;
+}
+
+.article-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #8eb4cb;
+}
+
+.article-row .id {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.article-row .title {
+  -webkit-box-flex: 10;
+      -ms-flex: 10;
+          flex: 10;
+}
+
+.article-row .action {
+  color: #3097D1;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.article-row .action button {
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+.article-row .action button:hover {
+  color: #1c5b7f;
 }
 
 html,

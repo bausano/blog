@@ -9,6 +9,15 @@ use App\User;
 class Article extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'subtitle', 'description', 'user_id', 'body'
+    ];
+
+    /**
      * Specifies the belongs to relationship.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

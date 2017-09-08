@@ -13,11 +13,13 @@
 
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index')->name('admin');
+
+    Route::resource('article', 'ArticleController');
 });
 
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/id/{article}', 'HomeController@article')->name('article');
+Route::get('/article/{article}', 'HomeController@article')->name('article');
 
 Auth::routes();

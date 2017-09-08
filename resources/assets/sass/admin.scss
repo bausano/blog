@@ -1,0 +1,28 @@
+.article-row {
+  display: flex;
+  color: $brand-info;
+
+  .id {
+    flex: 1;
+  }
+
+  .title {
+    flex: 10;
+  }
+
+  .action {
+    color: $brand-primary;
+    flex: 2;
+
+    button {
+      outline: 0;
+      border: 0;
+      background-color: rgba(0, 0, 0, 0);
+      padding: 0;
+
+      &:hover {
+        color: darken($brand-primary, 20);
+      }
+    }
+  }
+}

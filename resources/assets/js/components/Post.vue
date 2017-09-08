@@ -15,7 +15,7 @@
         </div>
         <div class="description col-md-12">> {{ article.description }}</div>
       </div>
-      <div class="body">{{ article.body }}</div>
+      <div class="body" v-html="article.body"></div>
 
       <heel></heel>
     </div>
@@ -27,6 +27,12 @@
 
   export default {
     props: ['article'],
-    components: {Heel}
+    components: {Heel},
+    methods: {
+      print(html) {
+        console.log(html)
+        return html
+      }
+    }
   }
 </script>

@@ -16,6 +16,7 @@
   .header {
     align-self: flex-start;
     flex: 1;
+    width: 100%;
 
     h1 {
       font-size: 200%;
@@ -39,6 +40,7 @@
     background-color: lighten($brand-info, 20);
     border-radius: 3px;
     align-self: flex-start;
+    width: 100%;
 
     .time {
       font-weight: 400;
@@ -62,6 +64,7 @@
     margin: 30px 0;
     align-self: flex-start;
     flex: 1;
+    width: 100%;
 
     p {
       font-family: 'Roboto Slab', serif;

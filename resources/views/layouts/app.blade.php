@@ -8,10 +8,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Blog | Michael Bausano</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Prism -->
+    <script src="{{ asset('js/prism.js') }}"></script>
+    <link href="{{ asset('css/prism.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -29,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Blog
                     </a>
                 </div>
 

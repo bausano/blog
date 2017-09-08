@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $articles = Article::all()->load(['user']);
+        $articles = Article::where('deleted', false)->get()->load(['user']);
 
         $id = $articles->last()->id;
 
@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function article(Request $request, Article $article)
     {
-        $articles = Article::all()->load(['user']);
+        $articles = Article::where('deleted', false)->get()->load(['user']);
 
         $id = $article->id;
 
