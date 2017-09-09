@@ -42631,6 +42631,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "name": "title",
+      "required": "",
       "placeholder": "Title"
     },
     domProps: {
@@ -42655,6 +42656,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "name": "subtitle",
+      "required": "",
       "placeholder": "Subtitle"
     },
     domProps: {
@@ -42678,7 +42680,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-control",
     attrs: {
       "name": "description",
-      "placeholder": "Description"
+      "placeholder": "Description",
+      "required": ""
     },
     domProps: {
       "value": (_vm.article.description)
@@ -42720,7 +42723,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "name": "body",
       "placeholder": "HTML body",
-      "rows": "15"
+      "rows": "15",
+      "required": ""
     },
     domProps: {
       "value": (_vm.article.body)

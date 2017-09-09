@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="panel-body">
-      <input type="text" name="title"
+      <input type="text" name="title" required
         placeholder="Title" class="form-control" v-model="article.title">
     </div>
     <div class="panel-body">
-      <input type="text" name="subtitle"
+      <input type="text" name="subtitle" required
         placeholder="Subtitle" class="form-control" v-model="article.subtitle">
     </div>
     <div class="panel-body">
       <textarea name="description"
         placeholder="Description"
-        class="form-control"
+        class="form-control" required
         v-model="article.description"></textarea>
     </div>
     <div class="panel-body">
@@ -20,7 +20,7 @@
       <textarea name="body"
         placeholder="HTML body"
         class="form-control"
-        rows="15"
+        rows="15" required
         v-model="article.body"
         v-if="!preview"></textarea>
       <div class="content">

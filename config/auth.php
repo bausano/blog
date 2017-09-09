@@ -99,4 +99,6 @@ return [
         ],
     ],
 
+
+    'register_key' => env('REGISTER_KEY')
 ];

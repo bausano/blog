@@ -61,6 +61,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('appkey') ? ' has-error' : '' }}">
+                            <label for="appkey" class="col-md-4 control-label">Application key</label>
+
+                            <div class="col-md-6">
+                                <input id="appkey" type="text" class="form-control" name="appkey" required>
+
+                                @if ($errors->has('appkey'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('appkey') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
