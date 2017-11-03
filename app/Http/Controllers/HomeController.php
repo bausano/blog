@@ -12,7 +12,11 @@ class HomeController extends Controller
     {
         $articles = Article::where('deleted', false)->get()->load(['user']);
 
-        $id = $articles->last()->id;
+        $id = false;
+
+        if ($articles->count() > 0) {
+            $id = $articles->last()->id;
+        }
 
         return view('welcome', compact('id', 'articles'));
     }

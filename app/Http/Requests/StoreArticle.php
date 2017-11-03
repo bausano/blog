@@ -23,8 +23,10 @@ class StoreArticle extends FormRequest
      */
     public function rules()
     {
+        $unique = $this->method() == "PUT" ? "" : "|unique:articles";
+
         return [
-            'title' => 'required|string|min:5|max:35|unique:articles',
+            'title' => 'required|string|min:5|max:35' . $unique,
             'subtitle' => 'required|string|min:5|max:60',
             'description' => 'required|string|min:15|max:300',
             'body' => 'required|string|min:100|max:12000'
