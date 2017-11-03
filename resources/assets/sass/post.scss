@@ -76,6 +76,12 @@
       margin-top: 35px;
     }
 
+    .highlight {
+      font-style: italic;
+      background-color: lighten($brand-info, 23);
+      padding: 0 4px;
+    }
+
     h1 {
       font-size: 125%;
       font-weight: 600;
@@ -83,6 +89,41 @@
 
     h3 {
       font-size: 115%;
+    }
+
+    .img {
+      width: 100%;
+      text-align: center;
+
+      img {
+        margin: auto;
+        max-width: 90%;
+      }
+    }
+
+    table {
+      border-radius: 5px;
+      border: 1px solid lighten($brand-info, 23);
+      width: 100%;
+
+      tr:nth-child(odd) {
+        background-color: darken($body-bg, 0);
+      }
+
+      th {
+        padding: 7px 20px;
+      }
+
+      tr:nth-child(1) {
+        background-color: lighten($brand-info, 23);
+      }
+
+      .note {
+        font-size: 90%;
+        font-style: italic;
+        text-align: center;
+        padding: 5px 0px;
+      }
     }
   }
 }

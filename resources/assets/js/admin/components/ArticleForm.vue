@@ -58,20 +58,23 @@
         }
       }
     },
+
     mounted() {
       if (this.raw != undefined) {
         this.article = JSON.parse(this.raw)
       }
     },
+
     methods: {
+      /**
+       * Code preview mode toggle.
+       */
       togglePreview() {
         this.preview = !this.preview
         setTimeout(() => {
           Prism.highlightAll()
         }, 100)
       }
-    },
-    computed: {
     }
   }
 </script>

@@ -2,9 +2,9 @@
   <div class="heel row">
     <div class="social col-md-6">
       <div class="link">
-        <a href="http://github.com/bausano/satan-codes" target="_blank">
+        <a href="http://github.com/bausano" target="_blank">
           <i class="fa fa-github fa-lg"></i>
-          github.com/bausano/satan-codes
+          github.com/bausano
         </a>
       </div>
       <div class="link">
@@ -37,15 +37,14 @@
         </a>
       </div>
       <p>
-        This blog is both a serious and a sarcastic project of
-        <a href="http://bausano.me" target="_blank">mine</a> and if you don't
-        find it witty then probably because it's not. But hey, you can always
-        tell me how much it sucks at
+        This blog is both a personal project of
+        <a href="http://bausano.me" target="_blank">mine</a>.
+        You can always tell me how much it sucks at
         <strong>bausanomichal&commat;gmail.com</strong>.
       </p>
       <p>
         If you'd like to submit some code for desecration you can get
-        in touch with mevia any <strong>social media</strong>
+        in touch with me via any <strong>social media</strong>
         or <strong>email</strong>.
       </p>
       <p><a>#desecratemycode</a></p>

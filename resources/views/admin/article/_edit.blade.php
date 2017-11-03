@@ -1,4 +1,4 @@
-@extends('layouts.panels')
+@extends('admin.layouts.panels')
 
 @section('panels')
 <div class="panel panel-default">

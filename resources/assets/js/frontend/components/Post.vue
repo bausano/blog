@@ -30,6 +30,7 @@
     components: {Heel},
     watch: {
       article: () => {
+        // Code highlighting has to be reloaded every time article is swapped.
         Prism.highlightAll()
       }
     }

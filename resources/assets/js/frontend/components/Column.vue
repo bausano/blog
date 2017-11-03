@@ -14,6 +14,10 @@
   const _ = require('lodash')
 
   export default {
+    /**
+     * @param heading String
+     * @param links Array of article objects
+     */
     props: ['heading', 'links'],
     methods: {
       truncate: (string) => {
@@ -21,10 +25,21 @@
           length: 70
         })
       },
+      /**
+       * Reloads the page with new article.
+       *
+       * @param id Numeric ID of article.
+       */
       swap(id) {
+        // Animation enables smooth data swapping.
         $('#app').fadeOut(300, () => {
+          // Emits event to the Blog compoment.
           this.$emit('swap', id)
+
+          // Changes URL for better user experience.
           history.replaceState({} , '', '/article/' + id)
+
+          // Displays the page and enables code highlighting.
           $('#app').fadeIn(300, () => {
             Prism.highlightAll()
           })
