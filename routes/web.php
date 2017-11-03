@@ -22,4 +22,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/article/{article}', 'HomeController@article')->name('article');
 
+Route::get('/all', 'HomeController@displayAll');
+
+Route::get('/tag/{tag}', 'HomeController@filter');
+
 Auth::routes();

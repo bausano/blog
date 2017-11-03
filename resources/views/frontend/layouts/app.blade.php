@@ -23,11 +23,6 @@
         <link href="{{ asset('css/prism.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div id="app">
-            <blog load="{{ $id }}" raw="{{ $articles }}"></blog>
-        </div>
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}"></script>
+        @yield('content')
     </body>
 </html>

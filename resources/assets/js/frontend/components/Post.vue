@@ -1,10 +1,12 @@
 <template>
   <div class="post">
     <div class="content">
+
       <div class="header">
         <h1>{{ article.title }}</h1>
         <h3>{{ article.subtitle }}</h3>
       </div>
+
       <div class="info row">
         <div class="time col-xs-6 col-md-6">
           <i class="fa fa-calendar"></i>
@@ -15,6 +17,14 @@
         </div>
         <div class="description col-md-12">> {{ article.description }}</div>
       </div>
+
+      <div class="tags" v-if="this.article.hasOwnProperty('tags')">
+        <a class="tag"
+          v-for="tag in article.tags"
+          v-bind:href="'/tag/' + tag.value"
+          v-text="tag.value"></a>
+      </div>
+
       <div class="body" v-html="article.body"></div>
 
       <heel></heel>

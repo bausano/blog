@@ -2,7 +2,7 @@
 
 > Laravel 5.5
 
-> (http://code.hys.cz)[Link]
+> [Link](http://code.hys.cz)
 
 From time to time I work on my blog. I don't plan to scale it much, I've
 pretty clear idea how it should look like. I would say it's 40 % done.
@@ -12,6 +12,7 @@ pretty clear idea how it should look like. I would say it's 40 % done.
 - Backend graphics
 - Comment section
 - Google analytics
-- Sitemap
-- Create article tags and groups
+- Clear redundant code in HomeController
+- Comment controllers
+- Remove bug with duplicating titles on edit
 - Add tests

@@ -26,4 +26,14 @@ class Article extends Model
     {
     	return $this->belongsTo(User::class);
     }
+
+    /**
+     * Specifies the has many relationship.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tags()
+    {
+        return $this->hasMany(Tag::class);
+    }
 }

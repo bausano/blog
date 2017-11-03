@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Tag;
 use App\Http\Requests\StoreArticle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,9 +50,15 @@ class ArticleController extends Controller
      */
     public function store(StoreArticle $request)
     {
+        $tags = explode(" ", trim($request->tags));
+
+        $request->request->remove('tags');
+
         $request->request->add(['user_id' => Auth::id()]);
 
-        Article::create($request->all());
+        $article = Article::create($request->all());
+
+        Tag::addAll($tags, $article);
 
         $request->session()->flash('status', 'Article was successfully added.');
 

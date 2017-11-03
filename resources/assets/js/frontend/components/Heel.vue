@@ -1,5 +1,5 @@
 <template>
-  <div class="heel row">
+  <div class="heel">
     <div class="social col-md-6">
       <div class="link">
         <a href="http://github.com/bausano" target="_blank">
@@ -31,7 +31,7 @@
     </div>
     <div class="disclaimer col-md-6">
       <div class="link">
-        <a href="#" target="_blank">
+        <a href="/all" target="_blank">
           <i class="fa fa-sitemap fa-lg"></i>
           List all scrolls
         </a>
