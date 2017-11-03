@@ -8525,6 +8525,12 @@ button.close {
   margin-top: 35px;
 }
 
+.content .body .highlight {
+  font-style: italic;
+  background-color: #dee9f0;
+  padding: 0 4px;
+}
+
 .content .body h1 {
   font-size: 125%;
   font-weight: 600;
@@ -8532,6 +8538,41 @@ button.close {
 
 .content .body h3 {
   font-size: 115%;
+}
+
+.content .body .img {
+  width: 100%;
+  text-align: center;
+}
+
+.content .body .img img {
+  margin: auto;
+  max-width: 90%;
+}
+
+.content .body table {
+  border-radius: 5px;
+  border: 1px solid #dee9f0;
+  width: 100%;
+}
+
+.content .body table tr:nth-child(odd) {
+  background-color: #f5f8fa;
+}
+
+.content .body table th {
+  padding: 7px 20px;
+}
+
+.content .body table tr:nth-child(1) {
+  background-color: #dee9f0;
+}
+
+.content .body table .note {
+  font-size: 90%;
+  font-style: italic;
+  text-align: center;
+  padding: 5px 0px;
 }
 
 .article-row {
