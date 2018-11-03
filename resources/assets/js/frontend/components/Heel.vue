@@ -37,7 +37,7 @@
         </a>
       </div>
       <p>
-        This blog is both a personal project of
+        This blog is a personal project of
         <a href="http://bausano.me" target="_blank">mine</a>.
         You can always tell me how much it sucks at
         <strong>bausanomichal&commat;gmail.com</strong>.

@@ -7,6 +7,8 @@
 
 require('./bootstrap')
 
+require('./frontend/ga')
+
 window.Vue = require('vue')
 
 /**

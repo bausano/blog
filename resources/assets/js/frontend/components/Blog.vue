@@ -71,6 +71,9 @@
         this.right = this.rightCol(this.articles, key)
 
         this.current = this.articles[key]
+
+        // Google Analytics tracking.
+        this.track(this.current)
       },
 
       /**
@@ -99,6 +102,10 @@
         let articles = arr.slice(0, key)
 
         return articles.slice(articles.length - 2, articles.length).reverse()
+      },
+
+      track: (article) => {
+        ga('send', 'event', 'Article', 'read', article.title)
       }
     }
   }

@@ -16,3 +16,4 @@ pretty clear idea how it should look like. I would say it's 40 % done.
 - Comment controllers
 - Remove bug with duplicating titles on edit
 - Add tests
+- Sort tag articles

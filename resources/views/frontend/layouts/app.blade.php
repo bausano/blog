@@ -21,6 +21,10 @@
         <!-- Prism -->
         <script src="{{ asset('js/prism.js') }}"></script>
         <link href="{{ asset('css/prism.css') }}" rel="stylesheet">
+
+
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80247282-2"></script>
     </head>
     <body>
         @yield('content')
